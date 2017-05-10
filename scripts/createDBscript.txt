@@ -1,0 +1,15 @@
+CREATE DATABASE IF NOT EXISTS `task3`;
+use task3;
+CREATE TABLE IF NOT EXISTS `USERS` (
+`user_id` int(11) NOT NULL AUTO_INCREMENT,
+`email` varchar(60) NOT NULL,
+`password` varchar(255) NOT NULL,
+`authenticated` binary(10),
+PRIMARY KEY (`user_id`)) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1;
+
+INSERT INTO `USERS` (email, password, authenticated) values('test@test.com',encrypt('test'),'1');
+
+CREATE TABLE IF NOT EXISTS `DEVICES`
+(   `id` int(11) NOT NULL AUTO_INCREMENT,   `IP` tinytext NOT NULL,   `PORT` int(11) NOT NULL,
+`COMMUNITY` tinytext NOT NULL,   `INTERFACES` text NOT NULL,   PRIMARY KEY (`id`) 
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1;
